@@ -44,6 +44,11 @@ for sample in row3:
     k+=1
 
 
+fileOut=open(args.out,"w")
+
+
+
+
 for line in reader:
     sum=0.0
     n=0
@@ -56,8 +61,8 @@ for line in reader:
         sum+=int(line[i])
 
 
-    print (gene_id,gene_name,n,float(n/len(brain_samples)))
-
+    fileOut.write(gene_id+","+gene_name+","+str(n)+","+str(float(n/len(brain_samples))))
+    fileOut.write("\n")
 
 file.close()
 
