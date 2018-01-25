@@ -47,7 +47,8 @@ for sample in row3:
 for line in reader:
     sum=0.0
     n=0
-    print line[0],line[1]
+    gene_id=line[0]
+    gene_name=line[1]
     for i in index_number_brain_samples:
         count=int(line[i])
         if count>5:
@@ -55,7 +56,7 @@ for line in reader:
         sum+=int(line[i])
 
 
-    print n,float(n/len(brain_samples))
+    print (gene_id,gene_name,n,float(n/len(brain_samples)))
 
 
 file.close()
