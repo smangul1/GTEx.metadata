@@ -46,10 +46,16 @@ for sample in row3:
 
 for line in reader:
     sum=0.0
+    n=0
     print line[0],line[1]
     for i in index_number_brain_samples:
-        sum+=float(line[i])
-    print sum, sum/len(brain_samples)
+        count=int(line[i])
+        if count>5:
+            n+=1
+        sum+=int(line[i])
+
+
+    print n,float(n/len(brain_samples))
 
 
 file.close()
